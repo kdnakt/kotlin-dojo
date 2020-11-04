@@ -3,6 +3,8 @@ package com.jetbrains.handson.httpapi.routes
 import com.jetbrains.handson.httpapi.models.customerStorage
 import io.ktor.application.call
 import io.ktor.http.HttpStatusCode
+import io.ktor.response.respond
+import io.ktor.response.respondText
 import io.ktor.routing.*
 
 fun Route.customerRouting() {
