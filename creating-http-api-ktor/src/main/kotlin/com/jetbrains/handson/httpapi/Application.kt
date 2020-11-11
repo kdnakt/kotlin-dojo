@@ -1,5 +1,6 @@
 package com.jetbrains.handson.httpapi
 
+import com.jetbrains.handson.httpapi.routes.registerCustomerRoutes
 import io.ktor.application.Application
 import io.ktor.features.ContentNegotiation
 import io.ktor.application.install
@@ -11,4 +12,5 @@ fun Application.module() {
     install(ContentNegotiation) {
         json()
     }
+    registerCustomerRoutes()
 }
