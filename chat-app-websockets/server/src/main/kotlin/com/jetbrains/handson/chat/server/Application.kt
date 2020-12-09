@@ -18,6 +18,7 @@ fun Application.module() {
             for(frame in incoming) {
                 frame as? Frame.Text ?: continue
                 val receivedText = frame.readText()
+                println("received $receivedText")
                 send("You said: $receivedText")
             }
         }
