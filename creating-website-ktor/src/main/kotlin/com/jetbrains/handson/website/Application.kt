@@ -16,5 +16,9 @@ import kotlinx.html.*
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
 fun Application.module() {
-
+    routing {
+        static("/static") {
+            resources("files")
+        }
+    }
 }
