@@ -16,9 +16,16 @@ import kotlinx.html.*
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
 fun Application.module() {
+    install(FreeMarker) {
+        templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
+        outputFormat = HTMLOutputFormat.INSTANCE
+    }
     routing {
         static("/static") {
             resources("files")
+        }
+        get("/") {
+            call.respond(FreeMarkerContent("index.ftl", mapOf("entries" to blogEntries), ""))
         }
     }
 }
