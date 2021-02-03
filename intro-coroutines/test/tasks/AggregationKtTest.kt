@@ -19,4 +19,19 @@ class AggregationKtTest {
         )
         Assert.assertEquals("Wrong result for 'aggregation'", expected, actual)
     }
+
+    @Test
+    fun testSortedDescending() {
+        val actual = listOf(
+            User("Alice", 8),
+            User("Bob", 10),
+            User("Charlie", 3)
+        ).aggregate()
+        val expected = listOf(
+            User("Bob", 10),
+            User("Alice", 8),
+            User("Charlie", 3)
+        )
+        Assert.assertEquals("Wrong result for 'aggregation'", expected, actual)
+    }
 }
