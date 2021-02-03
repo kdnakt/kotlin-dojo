@@ -20,7 +20,6 @@ class AggregationKtTest {
         Assert.assertEquals("Wrong result for 'aggregation'", expected, actual)
     }
 
-
     @Test
     fun testSortedDescending() {
         val actual = listOf(
