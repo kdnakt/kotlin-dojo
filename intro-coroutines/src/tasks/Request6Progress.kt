@@ -11,14 +11,16 @@ suspend fun loadContributorsProgress(
     val repos = service
             .getOrgRepos(req.org)
             .also { logRepos(req, it) }
-            .body() ?: listOf()
-    val allUsers = mutableListOf<User>()
+            .bodyList()
+
+    var allUsers = emptyList<User>()
     val counter = AtomicInteger(0)
     for (repo in repos) {
         val users = service.getRepoContributors(req.org, repo.name)
                 .also{ logUsers(repo, it)}
-                .body() ?: listOf()
-        allUsers += users
-        updateResults(allUsers.aggregate(),counter.incrementAndGet() == repos.size)
+                .bodyList()
+        allUsers = (allUsers + users).aggregate()
+        updateResults(allUsers,counter.incrementAndGet() == repos.size)
     }
+
 }
