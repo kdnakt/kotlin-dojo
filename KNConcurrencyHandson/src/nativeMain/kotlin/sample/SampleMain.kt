@@ -7,12 +7,12 @@ fun main() {
 
     // 1) Simple State
     // Just your usual mutable state, in the main thread.
-//    runSimpleState()
+    // runSimpleState()
 
     // 2) Frozen State
-    freezeSomeState()
-//    failChanges()
-//    freezeChildren()
+    // freezeSomeState()
+    // failChanges()
+    freezeChildren()
 
     // 3) Global State
 //    cantChangeThis()
