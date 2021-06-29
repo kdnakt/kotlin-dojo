@@ -12,7 +12,7 @@ fun main() {
     // 2) Frozen State
     // freezeSomeState()
     // failChanges()
-    freezeChildren()
+    // freezeChildren()
 
     // 3) Global State
 //    cantChangeThis()
@@ -28,7 +28,7 @@ fun main() {
 //    captureState()
 //    captureTooMuch()
 //    captureTooMuchAgain()
-//    captureArgs()
+    captureArgs()
 
     // 5) Debugging
 //    ensureNeverFrozenFailNow()
